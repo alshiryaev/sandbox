@@ -1,0 +1,1 @@
+module.exports = sum = (arr) => arr.length ? arr[0] + sum(arr.splice(1)) : 0;
