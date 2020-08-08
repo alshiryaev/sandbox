@@ -1,23 +1,26 @@
-const RLE = str => {
+module.exports = RLE = (str) => {
+  if (!str) {
+    throw new Error("Empty string was passed");
+  }
 
-    if (!str || !str.length)
-        throw new Error('agrument exception');
-    let temp = str[0], count = 0, result = '';
+  function createString(letter, letterCount) {
+    return `${letter}${letterCount > 1 ? letterCount : ""}`;
+  }
 
-    for (let i = 0; i < str.length; i++) {
-        const current = str[i];
-        if (current === temp) {
-            count += 1;
-            continue;
-        }
-        result += `${temp}${count === 1 ? '' : count}`;
-        count = 1;
-        temp = current;
+  let letter = str[0],
+    letterCount = 0,
+    resultString = "";
+
+  for (let s of str) {
+    if (s === letter) {
+      letterCount++;
+    } else {
+      resultString += createString(letter, letterCount);
+      letter = s;
+      letterCount = 1;
     }
-    result += `${temp}${count === 1 ? '' : count}`;
-    return result;
-}
+  }
 
-module.exports = RLE;
-
-
+  resultString += createString(letter, letterCount);
+  return resultString;
+};
