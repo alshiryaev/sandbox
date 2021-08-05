@@ -17,4 +17,4 @@ var twoSum = function(array, target) {
   
 module.exports = {
     twoSum
-}
+};

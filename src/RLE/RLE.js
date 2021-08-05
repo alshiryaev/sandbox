@@ -1,6 +1,6 @@
 module.exports = RLE = (str) => {
   if (!str) {
-    throw new Error("Empty string was passed");
+    throw new Error("An empty string was passed");
   }
 
   function createString(letter, letterCount) {
@@ -24,3 +24,5 @@ module.exports = RLE = (str) => {
   resultString += createString(letter, letterCount);
   return resultString;
 };
+
+RLE2('AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB');

@@ -8,4 +8,5 @@ module.exports = getMaxLength = (array) => {
         max = max > curr ? max : curr;
     }
     return max;
-}
+};
+

@@ -1,18 +1,12 @@
-const { of, interval, merge, timer, Subject, concat } = require('rxjs');
+const { Observable, timer, interval, of } = require("rxjs");
 const {
-  concatMap,
+  mapTo,
   map,
+  mergeAll,
   switchMap,
-  take,
-  takeWhile,
-  tap,
-  mergeMap,
-  takeUntil,
-  multicast,
-  publish,
-  refCount,
   share,
   shareReplay,
-  exhaustMap,
-} = require('rxjs/operators');
+} = require("rxjs/operators");
 
+const first$ = of('first');
+const second$ = of('test');
