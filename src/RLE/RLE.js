@@ -24,5 +24,3 @@ module.exports = RLE = (str) => {
   resultString += createString(letter, letterCount);
   return resultString;
 };
-
-RLE2('AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB');
