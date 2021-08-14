@@ -38,6 +38,6 @@ function qsort(arr, low = 0, hi = arr.length - 1){
   }
 
   return arr;
-};
+}
 
 module.exports = {qsort};

@@ -103,14 +103,14 @@ class LinkedList {
       let currentNode = this.root;
       let prevNode = null;
 
-      while(count < index) {
-        count ++;
+      while (count < index) {
+        count++;
         prevNode = currentNode;
         currentNode = currentNode.next;
       }
 
       prevNode.next = currentNode.next || null;
-      this.lenght --;
+      this.lenght--;
       return currentNode.value;
     }
   }
@@ -123,19 +123,21 @@ class LinkedList {
     return this.lenght === 0;
   }
 
-  [Symbol.iterator] = () => ({
-    currentNode: this.root,
-    next() {
-      const value = this.currentNode.value;
-      this.currentNode = this.currentNode.next;
-      return {
-        done: this.currentNode === null,
-        value
-      }
-    }
-  });
+  [Symbol.iterator]() {
+    return {
+      currentNode: this.root,
+      next() {
+        const value = this.currentNode.value;
+        this.currentNode = this.currentNode.next;
+        return {
+          done: this.currentNode === null,
+          value,
+        };
+      },
+    };
+  }
 }
 
 module.exports = {
-  LinkedList
-}
+  LinkedList,
+};
