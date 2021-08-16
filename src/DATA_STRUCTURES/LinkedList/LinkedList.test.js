@@ -10,7 +10,19 @@ describe('LinkedList', () => {
     });
 
     it('An empty list is empty is true ', () => {
-        expect(linkedList.isEmpty()).false;
+        expect(linkedList.isEmpty).true;
+    });
+
+    it('Add node lenght = 1', () => {
+        linkedList.addNode(12);
+        expect(linkedList.lenght).equals(1);
+    });
+
+    it('Remove node', () => {
+        linkedList.addNode(1);
+        linkedList.addNode(2);
+        linkedList.removeAt(1);
+        expect(linkedList.lenght).equals(1);
     });
 
 });
