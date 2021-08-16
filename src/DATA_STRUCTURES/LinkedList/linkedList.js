@@ -128,10 +128,14 @@ class LinkedList {
     return {
       currentNode: this.root,
       next() {
-        const value = this.currentNode.value;
-        this.currentNode = this.currentNode.next;
+        const value = this.currentNode !== null
+        ? this.currentNode.value
+            : null;
+        const done = this.currentNode === null;
+        this.currentNode = this.currentNode !== null
+        ? this.currentNode.next : null;
         return {
-          done: this.currentNode === null,
+          done,
           value,
         };
       },
@@ -142,3 +146,13 @@ class LinkedList {
 module.exports = {
   LinkedList,
 };
+
+
+const ll = new LinkedList();
+ll.addNode(1);
+ll.addNode(2);
+ll.addNode(33);
+
+for (const item of ll) {
+  console.log(item);
+}
