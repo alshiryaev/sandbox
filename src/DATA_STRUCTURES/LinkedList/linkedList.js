@@ -146,13 +146,3 @@ class LinkedList {
 module.exports = {
   LinkedList,
 };
-
-
-const ll = new LinkedList();
-ll.addNode(1);
-ll.addNode(2);
-ll.addNode(33);
-
-for (const item of ll) {
-  console.log(item);
-}
