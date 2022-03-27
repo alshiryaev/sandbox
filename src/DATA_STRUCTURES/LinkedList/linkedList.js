@@ -77,28 +77,34 @@ class LinkedList {
 
     if (index === 0) {
       newNode.next = this.root;
+      this.root = newNode;
+
+    } else {
+
+      let currentNode = this.root;
+      let prevNode = null;
+      let count = 0;
+
+      while (count < index) {
+        count++;
+        prevNode = currentNode;
+        currentNode = currentNode.next;
+      }
+
+      newNode.next = currentNode;
+      prevNode.next = newNode;
     }
-
-    let currentNode = this.root;
-    let prevNode = null;
-    let count = 0;
-
-    while (count < index) {
-      count++;
-      prevNode = currentNode;
-      currentNode = currentNode.next;
-    }
-
-    newNode.next = currentNode;
-    prevNode.next = newNode;
 
     this.lenght++;
   }
 
   removeAt(index) {
     if (index === 0) {
+      const tempNodeValue = this.root.value;
       const node = this.root.next;
       this.root = node;
+      this.lenght --;
+      return tempNodeValue;
     } else {
       let count = 0;
       let currentNode = this.root;
@@ -129,11 +135,11 @@ class LinkedList {
       currentNode: this.root,
       next() {
         const value = this.currentNode !== null
-        ? this.currentNode.value
-            : null;
+          ? this.currentNode.value
+          : null;
         const done = this.currentNode === null;
         this.currentNode = this.currentNode !== null
-        ? this.currentNode.next : null;
+          ? this.currentNode.next : null;
         return {
           done,
           value,
@@ -145,4 +151,5 @@ class LinkedList {
 
 module.exports = {
   LinkedList,
+  Node
 };
