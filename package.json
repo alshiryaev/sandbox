@@ -7,14 +7,14 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "test": "mocha src/**/*.test.js",
-    "test:jest": "jest"
+    "test": "jest"
   },
   "devDependencies": {
     "eslint": "^7.8.1",
     "jest": "^28.1.1"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "rxjs": "^6.6.2"
   }
 }

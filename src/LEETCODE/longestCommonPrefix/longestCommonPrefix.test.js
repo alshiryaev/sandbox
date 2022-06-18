@@ -1,14 +1,10 @@
-const {longestCommonPrefix} = require('./longestCommonPrefix');
-const {expect} = require('chai');
+const { longestCommonPrefix } = require('./longestCommonPrefix');
 
-describe('longestCommonPrefix', () => {
-    it('["flower", "flow", "flight"] => fl', () => {
-        expect(longestCommonPrefix(["flower", "flow", "flight"]))
-            .equals('fl')
-    });
-    
-    it('["dog", "racecar", "car"] => <>', () => {
-        expect(longestCommonPrefix(["dog", "racecar", "car"]))
-            .equals('')
-    });
+test('longestCommonPrefix', () => {
+
+    expect(longestCommonPrefix(["flower", "flow", "flight"]))
+        .toEqual('fl');
+
+    expect(longestCommonPrefix(["dog", "racecar", "car"]))
+        .toEqual('');
 })
