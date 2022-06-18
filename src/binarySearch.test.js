@@ -14,9 +14,9 @@ describe('binarySearch', () => {
 });
 
 describe('binarySearchRecursion', () => {
-    const arr = _.range(0, 100);
-    it('0-100 find 0', () => {
-        expect(binarySearchRecursive(arr, 0)).to.equals(0);
+    const arr = [1,4,5,8,11,21,22,34];
+    it('11 number has 4', () => {
+        expect(binarySearchRecursive(arr, 11)).to.equals(4);
     });
 
     it('1-100 find 50', () => {

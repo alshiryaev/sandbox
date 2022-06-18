@@ -16,8 +16,8 @@ function validParentheses(str) {
     for (const s of str) {4
         if (stack.length > 0 && stack[0] === map.get(s)) {
             stack.splice(0, 1);
-        } else {[
-            stack = [s].concat(...st]ack);
+        } else {
+            stack = [s].concat(...stack);
         }
     }
 
@@ -25,5 +25,5 @@ function validParentheses(str) {
 }
 
 module.exports = {
-    validParentheses,ß
+    validParentheses,
 }

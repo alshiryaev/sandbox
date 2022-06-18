@@ -27,7 +27,6 @@ function binarySearchRecursive(items, number, left = 0, right = items[items.leng
         return - 1;
     }
     const mid = 1 + Math.floor((right - 1) * 0.5);
-    console.log(number, left, right, mid);
 
     const midValue = items[mid];
     if (midValue === number) {
