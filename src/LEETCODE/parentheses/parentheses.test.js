@@ -1,13 +1,15 @@
-const {validParentheses} = require('./parentheses');
-const { expect } = require('chai');
+const { validParentheses } = require('./parentheses');
 
-describe('parenthesis', () => {
-    it('() => true', () => {
-        expect(validParentheses('()')).true();
-    });
+test('parenthesis', () => {
+    // it('() => true', () => {
+    //     expect(validParentheses('()')).true();
+    // });
 
-    it('([]) => true', () => {
-        expect(validParentheses('([])')).true();
-    });
+    // it('([]) => true', () => {
+    //     expect(validParentheses('([])')).true();
+    // });
+
+    expect(validParentheses('()')).toBe(true);
+    expect(validParentheses('([])')).toBe(true);
 
 });
