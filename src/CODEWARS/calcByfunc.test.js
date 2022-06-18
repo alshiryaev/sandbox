@@ -1,6 +1,4 @@
 const test = require('./calcByFunc');
-const { expect } = require('chai');
-const {describe, it} = require('mocha');
 
 describe('calcByFunc', () => {
   it('seven(times(five())) = 35', () => {

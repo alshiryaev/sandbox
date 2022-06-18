@@ -115,11 +115,8 @@ class BST {
   }
 }
 
-const bst = new BST(33);
-bst.insert(12);
-bst.insert(53);
-bst.insert(44);
 
-console.log(bst.size());
-console.log(bst.dfsInOrder());
-console.log(bst.bfs());
+module.exports = {
+  Node,
+  BST
+}

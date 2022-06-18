@@ -1,0 +1,20 @@
+:root {
+    --main-background: #fff;
+    --main-background-dark: #999;
+}
+
+body {  
+    background-color: var(--main-background);   
+}
+
+@media (min-width: 700px) {
+    body {
+        background-color: var(--main-background-dark);
+    }
+}
+
+@media (max-width: 300px) {
+    body {
+        background-color:;
+    }
+}
