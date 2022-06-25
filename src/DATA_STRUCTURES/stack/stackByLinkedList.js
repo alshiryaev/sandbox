@@ -27,4 +27,4 @@ class StackByLinkedList {
 
 module.exports = {
     StackByLinkedList,
-}
+};
