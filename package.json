@@ -7,11 +7,14 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier ./src/**"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.3",
     "eslint": "^7.8.1",
-    "jest": "^28.1.1"
+    "jest": "^28.1.1",
+    "prettier": "^2.7.1"
   },
   "dependencies": {
     "lodash": "^4.17.21",

@@ -7,7 +7,7 @@ class Node {
 }
 
 class BST {
-  constructor(value) {
+constructor(value) {
     this.root = new Node(value);
     this.count = 1;
   }

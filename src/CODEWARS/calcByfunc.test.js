@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 const fn = require('./calcByFunc');
-=======
-const test = require('./calcByFunc');
->>>>>>> 447f2c5666d1a287165cb3c2f915f4a567e9d12f
 
 test('calcByFunc', () => {
   

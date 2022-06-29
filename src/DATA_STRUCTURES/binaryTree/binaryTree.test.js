@@ -1,10 +1,13 @@
-const { expect } = require('chai');
-const { BST } = require('../binaryTree/binaryTree');
+const { BST } = require("../binaryTree/binaryTree");
 
-describe('Binary Tree', () => {
+let bst;
 
-    it('Should be size correct', () => {
-        expect(2).equals(3);
-    });
+beforeEach(() => {
+  bst = new BST(10);
+});
 
+test("BST: Should be a correct size", () => {
+  expect(bst.size()).toBe(1);
+  bst.insert(11);
+  expect(bst.size()).toBe(2);
 });
