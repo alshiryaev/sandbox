@@ -13,7 +13,7 @@ const map = new Map([
 function validParentheses(str) {
     let stack = [];
     
-    for (const s of str) {4
+    for (const s of str) {
         if (stack.length > 0 && stack[0] === map.get(s)) {
             stack.splice(0, 1);
         } else {
