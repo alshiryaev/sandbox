@@ -1,4 +1,4 @@
-const { Node, LinkedList } = require('../LinkedList/linkedList');
+const { LinkedList } = require('../LinkedList/linkedList');
 
 class StackByLinkedList {
 

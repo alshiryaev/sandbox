@@ -1,3 +1,6 @@
+const { arrayToLinkedList } = require("./array-to-linked-list");
+const { showListNode } = require("./show-list-node");
+const { ListNode } = require("./list-node");
 /**
  *
  * https://leetcode.com/problems/add-two-numbers/
@@ -14,76 +17,54 @@
  * @return {ListNode}
  */
 const addTwoNumbers = function (l1, l2) {
-  let p1 = l1, p2 = l2;
-  let head = new ListNode(0);
-  let current = head;
+  let p1 = l1,
+    p2 = l2;
+  let result = new ListNode(0);
   let memo = 0;
+  let head = result;
 
   while (p1 !== null || p2 !== null) {
-    let x = p1 !== null ? p1.val : 0;
-    let y = p2 !== null ?  p2.val : 0;
-    let sum  = x + y + memo;
+    let v1 = p1 === null ? 0 : p1.val;
+    let v2 = p2 === null ? 0 : p2.val;
+    let sum = v1 + v2 + memo;
     memo = Math.floor(sum / 10);
-    current.next = new ListNode(sum % 10);
-    current = current.next;
-    
+    result.next = new ListNode(sum % 10);
+    result = result.next;
+
     if (p1 !== null) {
-        p1 = p1.next;
+      p1 = p1.next;
     }
 
     if (p2 !== null) {
-        p2 = p2.next;
+      p2 = p2.next;
     }
-    
+
     if (memo > 0) {
-        current.next = new ListNode(1);
+      result.next = new ListNode(1);
     }
   }
 
   return head.next;
 };
 
-function ListNode(val, next) {
-  this.val = val === undefined ? 0 : val;
-  this.next = next === undefined ? null : next;
-}
+module.exports = {
+  addTwoNumbers,
+};
 
-function arrToListNode(arr) {
-  let res = new ListNode();
 
-  let t = res;
-  for (let index = 0; index < arr.length; index++) {
-    const element = arr[index];
-    t.val = element;
-    if (index < arr.length - 1) {
-      t.next = new ListNode();
-      t = t.next;
-    }
-  }
-  return res;
-}
-
-function showListNode(listNode) {
-  let pointer = listNode;
-  while (pointer != null) {
-    console.log(pointer.val);
-    pointer = pointer.next;
-  }
-}
-
-const l1 = arrToListNode([2, 4, 3]);
-const l2 = arrToListNode([5, 6, 4]);
+const l1 = arrayToLinkedList([2, 4, 3]);
+const l2 = arrayToLinkedList([5, 6, 4]);
 
 let res1 = addTwoNumbers(l1, l2);
-showListNode(res1);
+showListNode(res1, console.log);
 
-let res2 = addTwoNumbers(new ListNode(0), new ListNode(0));
-showListNode(res2);
+// let res2 = addTwoNumbers(new ListNode(0), new ListNode(0));
+// showListNode(res2, console.log);
 
 //Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 //Output: [8,9,9,9,0,0,0,1]
 
-const l11 = arrToListNode([9,9,9,9,9,9,9]);
-const l22 = arrToListNode([9,9,9,9]);
-const res333 = addTwoNumbers(l11, l22);
-showListNode(res333);
+// const l11 = arrayToLinkedList([9, 9, 9, 9, 9, 9, 9]);
+// const l22 = arrayToLinkedList([9, 9, 9, 9]);
+// const res333 = addTwoNumbers(l11, l22);
+// showListNode(res333, console.log);

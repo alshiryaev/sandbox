@@ -17,7 +17,7 @@ function binarySearch(items, number) {
 
 /**
  * BS by recursion
- * @param {Array} items 
+ * @param {number[]} items 
  * @param {Number} number 
  * @param {Number} left v
  * @param {Number} right 
@@ -43,6 +43,7 @@ function binarySearchRecursive(items, number, left = 0, right = items[items.leng
 module.exports = {
     binarySearch,
     binarySearchRecursive
-}
+};
+
 
 
