@@ -1,4 +1,4 @@
-const merge = require('../merge/merge');
+const {merge} = require('../merge/merge');
 
 function mergeSort(arr) {
     
@@ -11,7 +11,6 @@ function mergeSort(arr) {
     const rigthArr = arr.slice(pivotIndex);
 
 
-    console.log(leftArr, rigthArr);
     return merge(mergeSort(leftArr), mergeSort(rigthArr));
 
     

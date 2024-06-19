@@ -1,4 +1,4 @@
-module.exports = RLE = (str) => {
+const RLE = (str) => {
   if (!str) {
     throw new Error("An empty string was passed");
   }
@@ -24,3 +24,8 @@ module.exports = RLE = (str) => {
   resultString += createString(letter, letterCount);
   return resultString;
 };
+
+module.exports = {
+  RLE,
+};
+

@@ -1,4 +1,5 @@
-const { linkedListToNumber, ListNode } = require("./linked-list-to-number");
+const { linkedListToNumber } = require("./linked-list-to-number");
+const { ListNode} = require('./list-node');
 describe("linked-list-to-number", () => {
   test("return number", () => {
     const l1 = new ListNode(3, new ListNode(2, new ListNode(1, null)));
