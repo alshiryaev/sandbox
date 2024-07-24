@@ -1,7 +1,7 @@
 const { linkedListToNumber } = require("./linked-list-to-number");
 const { ListNode} = require('./list-node');
 describe("linked-list-to-number", () => {
-  test("return number", () => {
+  test("return number 3->2->1 => 321", () => {
     const l1 = new ListNode(3, new ListNode(2, new ListNode(1, null)));
 
     expect(linkedListToNumber(l1)).toBe(321);

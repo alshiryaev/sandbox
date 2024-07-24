@@ -3,6 +3,7 @@ const { ListNode } = require('./list-node');
 /**
  * 
  * @param {number[]} arr 
+ * @returns {ListNode}
  */
 function arrayToLinkedList(arr) {
     let head = new ListNode();
@@ -16,6 +17,23 @@ function arrayToLinkedList(arr) {
     return head;
 }
 
+/**
+ * 
+ * @param {ListNode} list 
+ * @returns {number[]}
+ */
+function arrayFromLinkedList(node) {
+    let pointer = node;
+    const result = [];
+    while (pointer != null) {
+        result.push(pointer.val);
+        pointer = pointer.next;
+    }
+
+    return result;
+}
+
 module.exports = {
     arrayToLinkedList,
+    arrayFromLinkedList
 };

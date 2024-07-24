@@ -1,3 +1,8 @@
+/**
+ * BS
+ * @param {number[]} items 
+ * @param {number} number
+ */
 function binarySearch(items, number) {
     let left = 0, right = items.length - 1;
     while (left <= right) {

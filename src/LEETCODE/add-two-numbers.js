@@ -57,14 +57,3 @@ const l2 = arrayToLinkedList([5, 6, 4]);
 
 let res1 = addTwoNumbers(l1, l2);
 showListNode(res1, console.log);
-
-// let res2 = addTwoNumbers(new ListNode(0), new ListNode(0));
-// showListNode(res2, console.log);
-
-//Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
-//Output: [8,9,9,9,0,0,0,1]
-
-// const l11 = arrayToLinkedList([9, 9, 9, 9, 9, 9, 9]);
-// const l22 = arrayToLinkedList([9, 9, 9, 9]);
-// const res333 = addTwoNumbers(l11, l22);
-// showListNode(res333, console.log);
