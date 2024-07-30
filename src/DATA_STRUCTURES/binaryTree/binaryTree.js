@@ -90,7 +90,7 @@ constructor(value) {
     };
 
     traverse(this.root);
-    return result;
+    return         ;
   }
 
   bfs() {
@@ -115,8 +115,43 @@ constructor(value) {
   }
 }
 
+/**
+ * 
+ * @param {Node} p 
+ * @param {Node} q 
+ * @returns {boolean}
+ */
+
+function isSame(p, q) {
+    // В этом случае мы дошли до конца в обоих деревьях
+    // значит до этого были только совпадения
+    if (!p && !q) {
+      return true;
+    }
+
+    // Разная длина 
+    if (!p || !q) {
+      return false;
+    }
+
+    return p.value === q.value && 
+    isSame(p.leftNode, q.leftNode) && 
+    isSame(p.rightNode, q.rightNode);
+}
+
 
 module.exports = {
   Node,
   BST
-}
+};
+
+const b = new BST(1);
+b.insert(2);
+b.insert(3);
+
+const b2 = new BST(1);
+b2.insert(2);
+b2.insert(3);
+b2.insert(4);
+
+console.log(isSame(b.root, b2.root));
