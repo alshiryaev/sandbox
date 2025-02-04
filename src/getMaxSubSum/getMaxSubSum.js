@@ -1,11 +1,10 @@
-const arr = [1, -2, 3, 4, -9, 6];
-
-export function getMaxSubSum(arr) {
+function getMaxSubSum(arr) {
+  let step = 0;
   let maxSum = 0, partialSum = 0;
   for (const item of arr) {
     partialSum += item;
     maxSum  = Math.max(maxSum, partialSum);
-    console.log(`item = ${item} maxSum = ${maxSum} partialSum = ${partialSum}`)
+    console.log(`step = ${++step}\titem = ${item}\tsum = ${partialSum}\tmaxSum = ${maxSum}`)
     if (partialSum < 0) {
       partialSum = 0;
       console.log(`partialSum is reseted and equals 0`);
@@ -15,8 +14,7 @@ export function getMaxSubSum(arr) {
   return maxSum; 
 }
 
-getMaxSubSum(arr);
-// getMaxSubSum([-1, 2, 3, -9]);
+getMaxSubSum([-1, 2, 3, -9]);
 // getMaxSubSum([2, -1, 2, 3, -9]);
 // getMaxSubSum([-1, 2, 3, -9, 11]);
 // getMaxSubSum([-2, -1, 1, 2]);

@@ -1,8 +1,9 @@
 /**
+ * https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/submissions/1338053865/
  * @param {string} s
  * @return {number}
  */
-var countGoodSubstrings = function(s) {
+const countGoodSubstrings = function(s) {
     let res = 0;
     let left = 0;
     const map = {};
@@ -10,7 +11,8 @@ var countGoodSubstrings = function(s) {
     for (const [right, p] of Object.entries(s)) {
         map[p] = map[p] ? map[p] + 1 : 1;
 
-        // Когда разница равна 3 
+        // Когда разница равна 3 и это означает что мы 
+        // вышли за границы
         // начинаем проверять что мы насчитали
         if (right - left === 3) {
 
@@ -37,4 +39,5 @@ var countGoodSubstrings = function(s) {
     return res;
 };
 
-console.log(countGoodSubstrings("xyzzaz")); // 1   
+console.log(countGoodSubstrings("xyzzaz")); // 1
+  

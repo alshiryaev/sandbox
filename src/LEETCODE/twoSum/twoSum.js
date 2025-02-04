@@ -40,7 +40,8 @@ const twoSumByPointers = (array, target) => {
   }
 
   return [];
-}
+};
+
 
 module.exports = {
   twoSum,
